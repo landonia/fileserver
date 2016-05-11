@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"net/http"
+	"os"
 )
 
 func main() {
@@ -19,5 +20,8 @@ func main() {
 
 	// Start the server
 	fmt.Printf("Starting fileserver using bind address: %s", addr)
-	http.ListenAndServe(addr, nil)
+	if err := http.ListenAndServe(addr, nil); err != nil {
+		fmt.Printf("Error occurred: %s", err.Error())
+		os.Exit(1)
+	}
 }
