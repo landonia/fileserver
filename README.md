@@ -19,7 +19,7 @@ simply run `go get github.com/landonia/goat`
 
 go run using `go run fileserver.go -addr=:8090 -dir=.`
 
-install by `go install fileserver.go`
+install by `go install {GO_PATH}/github.com/landonia/fileserver/fileserver.go`
 
 once installed `fileserver -addr=:8090 -dir=.`
 
