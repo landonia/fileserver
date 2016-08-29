@@ -15,7 +15,7 @@ some resource.
 
 ## Installation
 
-simply run `go get github.com/landonia/goat`
+simply run `go get github.com/landonia/fileserver`
 
 go run using `go run fileserver.go -addr=:8090 -dir=.`
 
@@ -26,5 +26,3 @@ once installed `fileserver -addr=:8090 -dir=.`
 ## About
 
 fileserver was written by [Landon Wainwright](http://www.landotube.com) | [GitHub](https://github.com/landonia).
-
-Follow me on [Twitter @landoman](http://www.twitter.com/landoman)!
