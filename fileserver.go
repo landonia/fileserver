@@ -5,9 +5,13 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+
+	"github.com/landonia/golog"
+	"github.com/landonia/golog/prettylog"
 )
 
 func main() {
+	log, _ := prettylog.New(prettylog.WithLevel(golog.INFO))
 
 	// Define flags
 	var filedir, addr string
@@ -19,7 +23,7 @@ func main() {
 	http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir(filedir))))
 
 	// Start the server
-	fmt.Printf("Starting fileserver using bind address: %s", addr)
+	log.Info("Starting fileserver at address: %s", addr)
 	if err := http.ListenAndServe(addr, nil); err != nil {
 		fmt.Printf("Error occurred: %s", err.Error())
 		os.Exit(1)
